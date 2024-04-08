@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadForm() {
     try {
         const response = await fetch('https://sodv1201-assignment-2-sport-backend.onrender.com/form-html');
+        //const response = await fetch('http://localhost:3000/form-html');
         if (!response.ok) {
             throw new Error('Failed to fetch form HTML');
         }
@@ -22,6 +23,7 @@ async function submitForm(e) {
     const confirmation = document.getElementById('confirmation');
     const formData = new FormData(form);
     const responseData = await fetch('https://sodv1201-assignment-2-sport-backend.onrender.com/register', {
+    //const responseData = await fetch('http://localhost:3000/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
